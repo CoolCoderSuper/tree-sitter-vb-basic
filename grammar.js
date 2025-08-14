@@ -2,7 +2,7 @@
 // @ts-check
 
 module.exports = grammar({
-  name: "vb_basic",
+  name: "vbnet",
   rules: {
       source_file: $ => repeat(choice(
       $.keyword,
