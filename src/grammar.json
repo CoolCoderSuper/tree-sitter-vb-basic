@@ -1,0 +1,1411 @@
+{
+  "name": "vb_basic",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "keyword"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "number"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "string"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "operator"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "punctuation"
+          }
+        ]
+      }
+    },
+    "keyword": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[fF]"
+            },
+            "named": false,
+            "value": "If"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "T[hH][eE][nN]"
+            },
+            "named": false,
+            "value": "Then"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[lL][sS][eE]I[fF]"
+            },
+            "named": false,
+            "value": "ElseIf"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[lL][sS][eE]"
+            },
+            "named": false,
+            "value": "Else"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[eE][lL][eE][cC][tT]"
+            },
+            "named": false,
+            "value": "Select"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "C[aA][sS][eE]"
+            },
+            "named": false,
+            "value": "Case"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[dD][dD][rR][eE][sS][sS]O[fF]"
+            },
+            "named": false,
+            "value": "AddressOf"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[nN][dD]"
+            },
+            "named": false,
+            "value": "And"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[yY]R[eE][fF]"
+            },
+            "named": false,
+            "value": "ByRef"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[yY]V[aA][lL]"
+            },
+            "named": false,
+            "value": "ByVal"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[nN]"
+            },
+            "named": false,
+            "value": "In"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[sS]"
+            },
+            "named": false,
+            "value": "Is"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "L[iI][kK][eE]"
+            },
+            "named": false,
+            "value": "Like"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "M[oO][dD]"
+            },
+            "named": false,
+            "value": "Mod"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[oO][tT]"
+            },
+            "named": false,
+            "value": "Not"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[rR]"
+            },
+            "named": false,
+            "value": "Or"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "T[oO]"
+            },
+            "named": false,
+            "value": "To"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "X[oO][rR]"
+            },
+            "named": false,
+            "value": "Xor"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "T[rR][uU][eE]"
+            },
+            "named": false,
+            "value": "True"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "F[aA][lL][sS][eE]"
+            },
+            "named": false,
+            "value": "False"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[oO][tT][hH][iI][nN][gG]"
+            },
+            "named": false,
+            "value": "Nothing"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[oO]"
+            },
+            "named": false,
+            "value": "Do"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "F[oO][rR]"
+            },
+            "named": false,
+            "value": "For"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "F[oO][rR]E[aA][cC][hH]"
+            },
+            "named": false,
+            "value": "ForEach"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "L[oO][oO][pP]"
+            },
+            "named": false,
+            "value": "Loop"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[eE][xX][tT]"
+            },
+            "named": false,
+            "value": "Next"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[tT][eE][pP]"
+            },
+            "named": false,
+            "value": "Step"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "U[nN][tT][iI][lL]"
+            },
+            "named": false,
+            "value": "Until"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "W[eE][nN][dD]"
+            },
+            "named": false,
+            "value": "Wend"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "W[hH][iI][lL][eE]"
+            },
+            "named": false,
+            "value": "While"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CB[oO][oO][lL]"
+            },
+            "named": false,
+            "value": "CBool"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CB[yY][tT][eE]"
+            },
+            "named": false,
+            "value": "CByte"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CC[uU][rR]"
+            },
+            "named": false,
+            "value": "CCur"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CD[aA][tT][eE]"
+            },
+            "named": false,
+            "value": "CDate"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CD[bB][lL]"
+            },
+            "named": false,
+            "value": "CDbl"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CI[nN][tT]"
+            },
+            "named": false,
+            "value": "CInt"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CL[nN][gG]"
+            },
+            "named": false,
+            "value": "CLng"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CS[nN][gG]"
+            },
+            "named": false,
+            "value": "CSng"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CS[tT][rR]"
+            },
+            "named": false,
+            "value": "CStr"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CVD[aA][tT][eE]"
+            },
+            "named": false,
+            "value": "CVDate"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CVE[rR][rR]"
+            },
+            "named": false,
+            "value": "CVErr"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[lL][iI][aA][sS]"
+            },
+            "named": false,
+            "value": "Alias"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[sS]"
+            },
+            "named": false,
+            "value": "As"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[aA][sS][eE]"
+            },
+            "named": false,
+            "value": "Base"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[eE][gG][iI][nN]"
+            },
+            "named": false,
+            "value": "Begin"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "C[aA][lL][lL]"
+            },
+            "named": false,
+            "value": "Call"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "C[oO][nN][sS][tT]"
+            },
+            "named": false,
+            "value": "Const"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[aA][tT][eE]"
+            },
+            "named": false,
+            "value": "Date"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[eE][cC][lL][aA][rR][eE]"
+            },
+            "named": false,
+            "value": "Declare"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[iI][mM]"
+            },
+            "named": false,
+            "value": "Dim"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[aA][cC][hH]"
+            },
+            "named": false,
+            "value": "Each"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[nN][dD]"
+            },
+            "named": false,
+            "value": "End"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[nN][uU][mM]"
+            },
+            "named": false,
+            "value": "Enum"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[rR][rR][oO][rR]"
+            },
+            "named": false,
+            "value": "Error"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[vV][eE][nN][tT]"
+            },
+            "named": false,
+            "value": "Event"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[xX][iI][tT]"
+            },
+            "named": false,
+            "value": "Exit"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[xX][pP][lL][iI][cC][iI][tT]"
+            },
+            "named": false,
+            "value": "Explicit"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "F[uU][nN][cC][tT][iI][oO][nN]"
+            },
+            "named": false,
+            "value": "Function"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "G[eE][tT]"
+            },
+            "named": false,
+            "value": "Get"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "G[oO]T[oO]"
+            },
+            "named": false,
+            "value": "GoTo"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[mM][pP][lL][eE][mM][eE][nN][tT][sS]"
+            },
+            "named": false,
+            "value": "Implements"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "L[eE][tT]"
+            },
+            "named": false,
+            "value": "Let"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "L[iI][bB]"
+            },
+            "named": false,
+            "value": "Lib"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "L[oO][cC][kK]"
+            },
+            "named": false,
+            "value": "Lock"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[nN]"
+            },
+            "named": false,
+            "value": "On"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[nN]E[rR][rR][oO][rR]"
+            },
+            "named": false,
+            "value": "OnError"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[pP][tT][iI][oO][nN]"
+            },
+            "named": false,
+            "value": "Option"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "P[rR][iI][vV][aA][tT][eE]"
+            },
+            "named": false,
+            "value": "Private"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "P[rR][oO][pP][eE][rR][tT][yY]"
+            },
+            "named": false,
+            "value": "Property"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "P[uU][bB][lL][iI][cC]"
+            },
+            "named": false,
+            "value": "Public"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[aA][iI][sS][eE]E[vV][eE][nN][tT]"
+            },
+            "named": false,
+            "value": "RaiseEvent"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[eE][dD][iI][mM]"
+            },
+            "named": false,
+            "value": "Redim"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[eE][sS][uU][mM][eE]"
+            },
+            "named": false,
+            "value": "Resume"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[eE][tT][uU][rR][nN]"
+            },
+            "named": false,
+            "value": "Return"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[eE][tT]"
+            },
+            "named": false,
+            "value": "Set"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[tT][aA][tT][iI][cC]"
+            },
+            "named": false,
+            "value": "Static"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[uU][bB]"
+            },
+            "named": false,
+            "value": "Sub"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "W[iI][tT][hH]"
+            },
+            "named": false,
+            "value": "With"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[iI][nN][aA][rR][yY]"
+            },
+            "named": false,
+            "value": "Binary"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "F[rR][iI][eE][nN][dD]"
+            },
+            "named": false,
+            "value": "Friend"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "M[eE]"
+            },
+            "named": false,
+            "value": "Me"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[eE][wW]"
+            },
+            "named": false,
+            "value": "New"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[pP][tT][iI][oO][nN][aA][lL]"
+            },
+            "named": false,
+            "value": "Optional"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "P[aA][rR][aA][mM]A[rR][rR][aA][yY]"
+            },
+            "named": false,
+            "value": "ParamArray"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[tT][rR][iI][nN][gG]"
+            },
+            "named": false,
+            "value": "String"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "W[iI][tT][hH]E[vV][eE][nN][tT][sS]"
+            },
+            "named": false,
+            "value": "WithEvents"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "C[lL][aA][sS][sS]"
+            },
+            "named": false,
+            "value": "Class"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "M[oO][dD][uU][lL][eE]"
+            },
+            "named": false,
+            "value": "Module"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[mM][pP][oO][rR][tT][sS]"
+            },
+            "named": false,
+            "value": "Imports"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[vV][eE][rR][rR][iI][dD][aA][bB][lL][eE]"
+            },
+            "named": false,
+            "value": "Overridable"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "P[rR][oO][tT][eE][cC][tT][eE][dD]"
+            },
+            "named": false,
+            "value": "Protected"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[vV][eE][rR][rR][iI][dD][eE][sS]"
+            },
+            "named": false,
+            "value": "Overrides"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[rR]E[lL][sS][eE]"
+            },
+            "named": false,
+            "value": "OrElse"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[nN][dD]A[lL][sS][oO]"
+            },
+            "named": false,
+            "value": "AndAlso"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[nN][tT][eE][rR][fF][aA][cC][eE]"
+            },
+            "named": false,
+            "value": "Interface"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[aA][mM][eE][sS][pP][aA][cC][eE]"
+            },
+            "named": false,
+            "value": "Namespace"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[eE][aA][dD]O[nN][lL][yY]"
+            },
+            "named": false,
+            "value": "ReadOnly"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[dD][dD]H[aA][nN][dD][lL][eE][rR]"
+            },
+            "named": false,
+            "value": "AddHandler"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[vV][eE][rR][lL][oO][aA][dD][sS]"
+            },
+            "named": false,
+            "value": "Overloads"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[eE][mM][oO][vV][eE]H[aA][nN][dD][lL][eE][rR]"
+            },
+            "named": false,
+            "value": "RemoveHandler"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CT[yY][pP][eE]"
+            },
+            "named": false,
+            "value": "CType"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[iI][rR][eE][cC][tT]C[aA][sS][tT]"
+            },
+            "named": false,
+            "value": "DirectCast"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "CD[eE][cC]"
+            },
+            "named": false,
+            "value": "CDec"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "H[aA][nN][dD][lL][eE][sS]"
+            },
+            "named": false,
+            "value": "Handles"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[sS][yY][nN][cC]"
+            },
+            "named": false,
+            "value": "Async"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "A[wW][aA][iI][tT]"
+            },
+            "named": false,
+            "value": "Await"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "M[yY]B[aA][sS][eE]"
+            },
+            "named": false,
+            "value": "MyBase"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[sS]N[oO][tT]"
+            },
+            "named": false,
+            "value": "IsNot"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[fF]"
+            },
+            "named": false,
+            "value": "Of"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "T[rR][yY]"
+            },
+            "named": false,
+            "value": "Try"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "C[aA][tT][cC][hH]"
+            },
+            "named": false,
+            "value": "Catch"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "F[iI][nN][aA][lL][lL][yY]"
+            },
+            "named": false,
+            "value": "Finally"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "T[hH][rR][oO][wW]"
+            },
+            "named": false,
+            "value": "Throw"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[hH][aA][rR][eE][dD]"
+            },
+            "named": false,
+            "value": "Shared"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "U[sS][iI][nN][gG]"
+            },
+            "named": false,
+            "value": "Using"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "S[hH][aA][dD][oO][wW][sS]"
+            },
+            "named": false,
+            "value": "Shadows"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "M[uU][sS][tT]I[nN][hH][eE][rR][iI][tT]"
+            },
+            "named": false,
+            "value": "MustInherit"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "M[uU][sS][tT]O[vV][eE][rR][rR][iI][dD][eE]"
+            },
+            "named": false,
+            "value": "MustOverride"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[nN][hH][eE][rR][iI][tT][sS]"
+            },
+            "named": false,
+            "value": "Inherits"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[pP][eE][rR][aA][tT][oO][rR]"
+            },
+            "named": false,
+            "value": "Operator"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[tT][eE][rR][aA][tT][oO][rR]"
+            },
+            "named": false,
+            "value": "Iterator"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[aA][rR][rR][oO][wW][iI][nN][gG]"
+            },
+            "named": false,
+            "value": "Narrowing"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "W[iI][dD][eE][nN][iI][nN][gG]"
+            },
+            "named": false,
+            "value": "Widening"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "P[aA][rR][tT][iI][aA][lL]"
+            },
+            "named": false,
+            "value": "Partial"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[oO][tT]I[nN][hH][eE][rR][iI][tT][aA][bB][lL][eE]"
+            },
+            "named": false,
+            "value": "NotInheritable"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "N[oO][tT]O[vV][eE][rR][rR][iI][dD][aA][bB][lL][eE]"
+            },
+            "named": false,
+            "value": "NotOverridable"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "G[eE][tT]T[yY][pP][eE]"
+            },
+            "named": false,
+            "value": "GetType"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "R[eE][gG][iI][oO][nN]"
+            },
+            "named": false,
+            "value": "Region"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[oO][oO][lL][eE][aA][nN]"
+            },
+            "named": false,
+            "value": "Boolean"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "B[yY][tT][eE]"
+            },
+            "named": false,
+            "value": "Byte"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "C[uU][rR][rR][eE][nN][cC][yY]"
+            },
+            "named": false,
+            "value": "Currency"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[eE][cC][iI][mM][aA][lL]"
+            },
+            "named": false,
+            "value": "Decimal"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "D[oO][uU][bB][lL][eE]"
+            },
+            "named": false,
+            "value": "Double"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "E[mM][pP][tT][yY]"
+            },
+            "named": false,
+            "value": "Empty"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "I[nN][tT][eE][gG][eE][rR]"
+            },
+            "named": false,
+            "value": "Integer"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "L[oO][nN][gG]"
+            },
+            "named": false,
+            "value": "Long"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "O[bB][jJ][eE][cC][tT]"
+            },
+            "named": false,
+            "value": "Object"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "V[aA][rR][iI][aA][nN][tT]"
+            },
+            "named": false,
+            "value": "Variant"
+          }
+        ]
+      }
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-z_][a-z0-9_]*",
+      "flags": "i"
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\d+(\\.\\d+)?"
+    },
+    "string": {
+      "type": "PATTERN",
+      "value": "\"([^\"]*)\""
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "'"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          }
+        ]
+      }
+    },
+    "operator": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "="
+          },
+          {
+            "type": "STRING",
+            "value": "+"
+          },
+          {
+            "type": "STRING",
+            "value": "-"
+          },
+          {
+            "type": "STRING",
+            "value": "*"
+          },
+          {
+            "type": "STRING",
+            "value": "/"
+          },
+          {
+            "type": "STRING",
+            "value": "<"
+          },
+          {
+            "type": "STRING",
+            "value": ">"
+          },
+          {
+            "type": "STRING",
+            "value": "<="
+          },
+          {
+            "type": "STRING",
+            "value": ">="
+          },
+          {
+            "type": "STRING",
+            "value": "<>"
+          }
+        ]
+      }
+    },
+    "punctuation": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          },
+          {
+            "type": "STRING",
+            "value": "{"
+          },
+          {
+            "type": "STRING",
+            "value": "}"
+          },
+          {
+            "type": "STRING",
+            "value": ","
+          },
+          {
+            "type": "STRING",
+            "value": "."
+          }
+        ]
+      }
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
